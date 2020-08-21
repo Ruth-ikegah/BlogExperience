@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row blog-post">
+
+    <!-- Articles Entries Column -->
+    <div class="col-md-8 p-5 d-flex flex-column justify-content-start align-content-center kk">
+
+      <h1 class="my-4 mr-5">Register</h1>
+
+      <form method = "POST">
+        
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type = "submit" class = "btn btn-primary submit" >Submit</button>
+      </form>
+
+      
+      
+      </div>
+    </div>
+</div>
+{% endblock %}

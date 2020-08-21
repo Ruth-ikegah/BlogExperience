@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+        <!--================Blog Area =================-->
+        <section class="blog_area p_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="blog_left_sidebar">
+
+							
+                            <article class="blog_style1">
+                            	<div class="blog_img">
+                            		<img class="img-fluid" src="img/home-blog/blog-1.jpg" alt="">
+                            	</div>
+                            	<div class="blog_text">
+									<div class="blog_text_inner">
+										<!-- <a class="cat" href="#">Gadgets</a> -->
+										<a href="{% url 'blog:detail-view' article.pk %}"><h4>{{object.title}}</h4></a>
+										<p>{{object.text}}</p>
+										<a href="#" class="btn btn-primary"></a>
+										<div class="date">
+											<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>{{object.date}}</a>
+											<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>{{object.author}}</a>
+										</div>	
+									</div>
+                            	</div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock %}                       

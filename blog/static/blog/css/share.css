@@ -1,0 +1,41 @@
+.share, .share a {
+  
+  color: white; 
+  display: flex;
+  align-items: center;
+  /* margin-left: auto; */
+  
+
+
+   
+}
+.nav-link a:hover {
+  padding: 0;
+
+}
+
+a.hover {
+  margin: 0%;
+  padding: 0%;
+}
+
+
+.share:hover {
+    background: #cc2675;
+    color: white;
+    
+}
+
+.blog-post {
+  padding: 5rem;
+}
+
+.kk {
+  height: 100%;
+  width: 100%;
+}
+
+/* .custom-nav {
+  padding: 2rem;
+  height:100% ;
+} */

@@ -1,0 +1,72 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+      
+        
+        <!--================Blog Area =================-->
+        <section class="blog_area p_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="blog_left_sidebar">
+
+							{% for article in articles %}
+                            <article class="blog_style1">
+                            	<div class="blog_img">
+                            		<img class="img-fluid" src="img/home-blog/blog-1.jpg" alt="">
+                            	</div>
+                            	<div class="blog_text">
+									<div class="blog_text_inner">
+										<!-- <a class="cat" href="#">Gadgets</a> -->
+										<a href="{% url 'blog:detail-view' article.pk %}"><h4>{{ article.title }}</h4></a>
+										<div class= "article-img-con">
+										
+										</div>
+										<p>{{ article.text|truncatechars:100 }}</p>
+										<a href="{% url 'blog:detail-view' article.pk %}" class="btn btn-primary">Read More</a>
+										<div class="date">
+											<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>{{ article.date }}</a>
+											<a href="#"><i class="" aria-hidden="true"></i> {{ article.author }}</a>
+										</div>	
+									</div>
+                            	</div>
+							</article>
+							{% endfor%}
+                            
+                     
+                           <!-- articles = Article.objects.all().order_by('date') -->
+                           {% if is_paginated %}
+                            <nav class="blog-pagination justify-content-center d-flex">
+		                        <ul class="pagination">
+									{% if page_obj.has_previous %}
+		                            <li class="page-item">
+		                                <a href="?page={{page_obj.previous_page_number}}" class="page-link" aria-label="Previous">
+		                                    <span aria-hidden="true">
+		                                        <span class="lnr lnr-chevron-left"></span>
+		                                    </span>
+		                                </a>
+									</li>
+									{% endif %}
+		                            
+									{% if page_obj.has_next %}
+		                            <li class="page-item">
+		                                <a href="?page={{page_obj.next_page_number}}" class="page-link" aria-label="Next">
+		                                    <span aria-hidden="true">
+		                                        <span class="lnr lnr-chevron-right"></span>
+		                                    </span>
+		                                </a>
+									</li>
+									{% endif %}
+		                        </ul>
+							</nav>
+							{% endif %}
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!--================Blog Area =================-->
+        
+        {% endblock %}       
