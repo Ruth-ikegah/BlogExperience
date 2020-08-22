@@ -14,7 +14,23 @@
       <form method = "POST">
         
           {% csrf_token %}
-          {{ form.as_p }}
+          <p>{{ form.username.label_tag }}</p>
+          <p>{{ form.username }}</p>
+         <br>
+
+          <p>{{ form.email.label_tag }}</p>
+          <p>{{ form.email }}</p>
+          <br>
+
+          <p>{{ form.password1.label_tag }}</p>
+          <p>{{ form.password1 }}</p>
+            
+          <br>
+
+          <p>{{ form.password2.label_tag }}</p>
+          <p>{{ form.password2 }}</p>
+          <br>
+
           <button type = "submit" class = "btn btn-primary submit" >Submit</button>
       </form>
 
